@@ -23,7 +23,7 @@ export const Title: FC<TextProps> = ({type, sx, children}) => {
             color: colors.pink, 
             fontFamily: 'sans-serif', 
             fontWeight: 'bold',
-            fontSize: '62px',
+            fontSize: ['36px','48px','62px'],
             ...sx
         }} >
             {children}
