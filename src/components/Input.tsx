@@ -8,7 +8,7 @@ interface InputProps extends InputPropsTheme {
 
 }
 export const Input: FC<InputProps> = ({label, errorMessage, ...props}) => {
-    return( <Flex sx={{ flexDirection: 'column',rowGap: '4px'}}>
+    return( <Flex sx={{ flexDirection: 'column',rowGap: '4px', paddingTop: '8px'}}>
     <Text sx={{ 
         color: colors.white,  
         fontFamily: 'sans-serif',
