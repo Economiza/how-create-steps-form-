@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { Flex } from 'theme-ui'
 import { Button } from '../src/components/Button'
+import { Container } from '../src/components/Container'
 import { Title } from '../src/components/Title'
-import { colors } from '../styles/colors'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -13,20 +12,12 @@ const Home: NextPage = () => {
   }
 
   return (
-    <Flex
-      sx={{
-        flexDirection: 'column',
-        width: '100vw',
-        height: '100vh',
-        background: `linear-gradient(to right, ${colors.black}, ${colors['dark-gray']})`,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+    <Container
   >
   <img src='/assets/logo.svg'/>
   <Title>PANDORA CODE</Title>
   <Button onClick={redirectCreateAccountPage}>Criar conta</Button>
-  </Flex>
+  </Container>
   )
 }
 
