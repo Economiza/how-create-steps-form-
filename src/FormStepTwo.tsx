@@ -17,9 +17,9 @@ export const FormStepTwo: FC = () => {
     return <Card>
     <Title type="secondary">Create Account</Title>
     <Box>
-        <Input label="User Name" errorMessage="Nome do usuário está incorreto"/>
-        <Input label="Password" errorMessage="Nome do usuário está incorreto"/>
-        <Input label="Confirm password" errorMessage="Nome do usuário está incorreto"/>
+        <Input label="User Name" errorMessage="Error message"/>
+        <Input label="Password" errorMessage="Error message"/>
+        <Input label="Confirm password" errorMessage="Error message"/>
     </Box>
     <Button sx={{width: '100%'}} onClick={redirectSuccessPage}>Criar conta</Button>
 </Card>

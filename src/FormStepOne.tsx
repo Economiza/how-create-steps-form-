@@ -17,9 +17,9 @@ export const FormStepOne: FC = () => {
     return <Card>
     <Title type="secondary">Create Account</Title>
     <Box>
-        <Input label="First Name" errorMessage="Nome do usuário está incorreto"/>
-        <Input label="Last Name" errorMessage="Nome do usuário está incorreto"/>
-        <Input label="Age Name" errorMessage="Nome do usuário está incorreto"/>
+        <Input label="First Name" errorMessage="Error message"/>
+        <Input label="Last Name" errorMessage="Error message"/>
+        <Input label="Age Name" errorMessage="Error message"/>
     </Box>
     <Button sx={{width: '100%'}} onClick={redirectCreateAccountStepTwo}>Continuar</Button>
 </Card>
