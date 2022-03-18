@@ -17,7 +17,7 @@ export const FormStepTwo: FC = () => {
     return <Card>
     <Title type="secondary">Create Account</Title>
     <Box>
-        <Input label="User Name" errorMessage="Error message"/>
+        <Input label="Email" errorMessage="Error message"/>
         <Input label="Password" errorMessage="Error message"/>
         <Input label="Confirm password" errorMessage="Error message"/>
     </Box>
