@@ -1,3 +1,4 @@
+import { useStateMachine } from "little-state-machine";
 import { FC } from "react";
 import { Flex, Text } from "theme-ui";
 import { Card } from "../../src/components/Card";
@@ -7,32 +8,26 @@ import { Title } from "../../src/components/Title";
 import { colors } from "../../styles/colors";
 
 const Success: FC = () => {
-    const userAccountData = {
-        firstName: 'Sheilla',
-        lastName: 'Silva',
-        age: '18',
-        email: 'sheilla.silva@test.com',
-        password: '123456',
-    }
-
+    const { state } = useStateMachine()
+    
     return <Container>
         <Header />
         <Card>
             <Title type="secondary" sx={{color: colors.green}}>Congratulations! Your account has been successfully created!</Title>
             <Text sx={{color: colors.white}}>
-                First Name: {userAccountData.firstName}
+                First Name: {state.user.firstName}
             </Text>
             <Text sx={{color: colors.white}}>
-                Last Name: {userAccountData.lastName}
+                Last Name: {state.user.lastName}
             </Text>
             <Text sx={{color: colors.white}}>
-                Age: {userAccountData.age}
+                Age: {state.user.age}
             </Text>
             <Text sx={{color: colors.white}}>
-                Email: {userAccountData.email}
+                Email: {state.user.email}
             </Text>
             <Text sx={{color: colors.white}}>
-                Password: {userAccountData.password}
+                Password: {state.user.password}
             </Text>
         </Card>
     </Container>
