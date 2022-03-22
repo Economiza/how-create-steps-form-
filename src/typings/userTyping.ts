@@ -10,7 +10,4 @@ export interface UserAccountStepOne {
     age: number
 }
 
-export interface UserAccount extends UserAccountStepOne {
-    email: string
-    password: string
-}
+export interface UserAccount extends UserAccountStepOne, UserAccountStepTwo {}
