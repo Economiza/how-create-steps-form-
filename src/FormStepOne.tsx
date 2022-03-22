@@ -19,7 +19,7 @@ export const FormStepOne: FC = () => {
     <Box>
         <Input label="First Name" errorMessage="Error message"/>
         <Input label="Last Name" errorMessage="Error message"/>
-        <Input label="Age Name" errorMessage="Error message"/>
+        <Input label="Age" errorMessage="Error message"/>
     </Box>
     <Button sx={{width: '100%'}} onClick={redirectCreateAccountStepTwo}>Continuar</Button>
 </Card>
