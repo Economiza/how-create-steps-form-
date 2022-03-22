@@ -3,7 +3,10 @@ import * as yup from 'yup'
 export const userAccounStepOnetValidationSchema = yup.object({
     firstName: yup.string().required('First name is required'),
     lastName: yup.string().required('Last name is required'),
-    age: yup.number().required('Age is required').min(18, 'You must be 18 years old or above')
+    age: yup.number()
+        .required('Age is required')
+        .min(18, 'You must be 18 years old or above')
+        .typeError('Age is required')
 })
 
 export const userAccounStepTwotValidationSchema = yup.object({

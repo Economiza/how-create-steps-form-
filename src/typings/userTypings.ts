@@ -1,13 +1,13 @@
-interface UserAccountFormStepOne {
+export interface UserAccountFormStepOne {
     firstName: string
     lastName: string
     age: number
 }
 
-interface UserAccountFormStepTwo {
+export interface UserAccountFormStepTwo {
     email: string
     password: string
     confirmPassword: string
 }
 
-interface UserAccountForm extends UserAccountFormStepOne, UserAccountFormStepTwo {}
+export interface UserAccountForm extends UserAccountFormStepOne, UserAccountFormStepTwo {}
