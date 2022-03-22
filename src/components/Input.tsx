@@ -19,6 +19,6 @@ export const Input: FC<InputProps> = ({label, errorMessage, ...props}) => {
         color: colors.red,  
         fontFamily: 'sans-serif',
         fontSize: '10px'
-    }}>* {errorMessage}</Text>
+    }}>{errorMessage}</Text>
 </Flex>)
 }
