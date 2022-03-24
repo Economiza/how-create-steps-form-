@@ -1,13 +1,12 @@
 import { FC } from "react"
 import { Container } from "../../src/components/Container"
 import { Header } from "../../src/components/Header"
-import { FormStepOneContainer } from "../../src/FormStepOne"
+import { FormStepThreeContainer } from "../../src/FormStepThree"
 
 const CreateAcccount: FC = () => {
-    
     return <Container>
         <Header/> 
-        <FormStepOneContainer/>
+        <FormStepThreeContainer/>
     </Container>
 }
 
