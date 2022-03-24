@@ -6,11 +6,12 @@ import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 import { Input } from "./components/Input";
 import { Title } from "./components/Title";
-import { useTryCreateAccountStepOne } from "./hooks/useTryCreateAccountStepOne";
-import { useUserAccountFormStepOne } from "./hooks/useUserAccountFormStepOne";
+import { useTryCreateAccount } from "./hooks/useTryCreateAccount";
+import { useUserAccountForm } from "./hooks/useUserAccountForm";
 import { UserAccountFormStepOne } from "./typings/userTypings";
 
 export const FormStepOneContainer: FC = () => {
+    const {useUserAccountFormStepOne} = useUserAccountForm();
     const form = useUserAccountFormStepOne();
     return <FormProvider {...form}><FormStepOne/></FormProvider>
 }
@@ -24,7 +25,7 @@ export const FormStepOne: FC = () => {
         router.push(path + '/step-two')
     }
     
-    const {tryCreateAccountStepOne} = useTryCreateAccountStepOne();
+    const {tryCreateAccountStepOne} = useTryCreateAccount();
 
     const submitForm = (form: UserAccountFormStepOne) => {
         tryCreateAccountStepOne(form);

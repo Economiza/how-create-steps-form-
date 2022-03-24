@@ -6,11 +6,12 @@ import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 import { Input } from "./components/Input";
 import { Title } from "./components/Title";
-import { useTryCreateAccountStepThree } from "./hooks/useTryCrateAccountStepThree";
-import { useUserAccountFormStepThree } from "./hooks/useUserAccountFormStepThree";
+import { useTryCreateAccount } from "./hooks/useTryCreateAccount";
+import { useUserAccountForm } from "./hooks/useUserAccountForm";
 import { UserAccountFormStepThree } from "./typings/userTypings";
 
 export const FormStepThreeContainer: FC = () => {
+    const {useUserAccountFormStepThree} = useUserAccountForm();
     const form = useUserAccountFormStepThree();
     return <FormProvider {...form}><FormStepThree/></FormProvider>
 }
@@ -24,7 +25,7 @@ export const FormStepThree: FC = () => {
         router.push(createAccountPath + '/success')
     }
 
-    const { tryCreateAccountStepThree } = useTryCreateAccountStepThree();
+    const { tryCreateAccountStepThree } = useTryCreateAccount();
 
     const submitForm = (form: UserAccountFormStepThree) => {
         tryCreateAccountStepThree(form);

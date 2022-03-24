@@ -10,34 +10,19 @@ import { colors } from "../../styles/colors";
 const Success: FC = () => {
     const {state} = useStateMachine();
 
+    let keys: string[] = [];
+    for(const key in state.user){
+        keys.push(key);
+    }
     return <Container>
         <Header />
         <Card>
             <Title type="secondary" sx={{color: colors.green}}>Congratulations! Your account has been successfully created!</Title>
-            <Text sx={{color: colors.white}}>
-                First Name: {state.user.firstName}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Last Name: {state.user.lastName}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Age: {state.user.age}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Email: {state.user.email}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Password: {state.user.password}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Enrollment: {state.user.enrollment}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                Period: {state.user.period}
-            </Text>
-            <Text sx={{color: colors.white}}>
-                CRA: {state.user.cra}
-            </Text>
+            {keys.map((key) => 
+                <Text key={key} sx={{color: colors.white}}>
+                    {key}: {state.user[key]}
+                </Text>
+            )}
         </Card>
     </Container>
 }
