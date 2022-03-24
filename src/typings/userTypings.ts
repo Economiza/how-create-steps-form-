@@ -2,7 +2,7 @@
 interface UserAccountFormStepOne {
     firstName: string,
     lastName: string,
-    agr: number
+    age: number
 }
 
 interface UserAccountFormStepTwo {
