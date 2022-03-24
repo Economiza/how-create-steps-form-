@@ -6,6 +6,7 @@ import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 import { Input } from "./components/Input";
 import { Title } from "./components/Title";
+import { useTryCreateAccountStepOne } from "./hooks/useTryCreateAccountStepOne";
 import { useUserAccountFormStepOne } from "./hooks/useUserAccountFormStepOne";
 import { UserAccountFormStepOne } from "./typings/userTypings";
 
@@ -19,11 +20,11 @@ export const FormStepOne: FC = () => {
     const {control, handleSubmit} = useFormContext<UserAccountFormStepOne>();
 
     const redirectCreateAccountStepTwo = () => {
-        
         const path = router.pathname
         router.push(path + '/step-two')
     }
-    const tryCreateAccountStepOne = (form: UserAccountFormStepOne) => console.log(form);
+    
+    const {tryCreateAccountStepOne} = useTryCreateAccountStepOne();
 
     const submitForm = (form: UserAccountFormStepOne) => {
         tryCreateAccountStepOne(form);
@@ -62,7 +63,7 @@ export const FormStepOne: FC = () => {
             />
             }/>
             </Box>
-            <Button sx={{width: '100%'}} onClick={redirectCreateAccountStepTwo}>Continuar</Button>
+            <Button sx={{width: '100%'}}>Continuar</Button>
         </form> 
 </Card>
 }

@@ -11,8 +11,14 @@ interface UserAccountFormStepTwo {
     confirmPassword: string
 }
 
-interface UserAccountForm extends UserAccountFormStepOne, UserAccountFormStepTwo {}
+interface UserAccountFormStepThree {
+    enrollment: number,
+    period: string,
+    cra: number
+}
+
+interface UserAccountForm extends UserAccountFormStepOne, UserAccountFormStepTwo, UserAccountFormStepThree {}
 
 
-export { UserAccountFormStepOne, UserAccountFormStepTwo, UserAccountForm }
+export { UserAccountFormStepOne, UserAccountFormStepTwo, UserAccountForm, UserAccountFormStepThree }
 

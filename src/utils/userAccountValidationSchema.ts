@@ -12,3 +12,9 @@ export const UserAccountStepTwoValidationSchema = yup.object({
     confirmPassword: yup.string().oneOf([yup.ref("password"),null], "Password must be equals")
 })
 
+export const UserAccountStepThreeValidationSchema = yup.object({
+    enrollment: yup.number().required("Matricula is required"),
+    period: yup.string().required("Periodo is required"),
+    cra: yup.number().required("CRA is required").min(0, "CRA must be higher than 0").max(10, "CRA cannot be higher than 10"),
+})
+

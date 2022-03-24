@@ -6,6 +6,7 @@ import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 import { Input } from "./components/Input";
 import { Title } from "./components/Title";
+import { useTryCreateAccountStepTwo } from "./hooks/useTryCreateAccountStepTwo";
 import { useUserAccountFormStepTwo } from "./hooks/useUserAccountFormStepTwo";
 import { UserAccountFormStepTwo } from "./typings/userTypings";
 
@@ -18,21 +19,21 @@ export const FormStepTwo: FC = () => {
     const router = useRouter()
     const {control, handleSubmit} = useFormContext<UserAccountFormStepTwo>();
 
-    const redirectSuccessPage = () => {
-        const createAccountPath = '/' + router.pathname.split('/')[1]        
-        router.push(createAccountPath + '/success')
+    const redirectCreateAccountStepThree = () => {
+        router.push('./step-three')
     }
-
-    const tryCreateAccountStepOne = (form: UserAccountFormStepTwo) => console.log(form);
+    
+    const { tryCreateAccountStepTwo } = useTryCreateAccountStepTwo();
 
     const submitForm = (form: UserAccountFormStepTwo) => {
-        tryCreateAccountStepOne(form);
-        redirectSuccessPage();
+        tryCreateAccountStepTwo(form);
+        redirectCreateAccountStepThree();
     }
 
     return <Card>
-    <Title type="secondary">Create Account</Title>
+    
     <form onSubmit={handleSubmit(submitForm)}>
+    <Title type="secondary">Create Account</Title>
     <Box>
     <Controller name="email" control={control  } render={({field: {onChange, name, onBlur}, fieldState: {error}}) => 
                     <Input name={name} label="Email" onChange={({target}) => onChange(target.value)} onBlur={onBlur} errorMessage={error?.message} />}/>
@@ -62,8 +63,9 @@ export const FormStepTwo: FC = () => {
             />
             }/>
     </Box>
+    <Button sx={{width: '100%'}}>Criar conta</Button>
     </form>
     
-    <Button sx={{width: '100%'}} onClick={redirectSuccessPage}>Criar conta</Button>
-</Card>
+    
+    </Card>
 }
