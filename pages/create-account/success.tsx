@@ -10,6 +10,7 @@ import { colors } from "../../styles/colors";
 const Success: FC = () => {
     const { state } = useStateMachine()
     
+    if(!state.user) return <></>
     return <Container>
         <Header />
         <Card>
