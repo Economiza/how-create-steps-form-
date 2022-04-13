@@ -15,19 +15,19 @@ const Success: FC = () => {
         <Card>
             <Title type="secondary" sx={{color: colors.green}}>Congratulations! Your account has been successfully created!</Title>
             <Text sx={{color: colors.white}}>
-                First Name: {state.user.firstName}
+                First Name: {state?.user?.firstName}
             </Text>
             <Text sx={{color: colors.white}}>
-                Last Name: {state.user.lastName}
+                Last Name: {state?.user?.lastName}
             </Text>
             <Text sx={{color: colors.white}}>
-                Age: {state.user.age}
+                Age: {state?.user?.age}
             </Text>
             <Text sx={{color: colors.white}}>
-                Email: {state.user.email}
+                Email: {state?.user?.email}
             </Text>
             <Text sx={{color: colors.white}}>
-                Password: {state.user.password}
+                Password: {state?.user?.password}
             </Text>
         </Card>
     </Container>
