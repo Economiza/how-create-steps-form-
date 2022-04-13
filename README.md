@@ -5,7 +5,7 @@
  <p align="center"> :warning: IN PROGRESS :warning: </p>
 </p>
 
-O projeto foi feito em NextJS + Typescript.
+O projeto foi desenvolvido em NextJS + Typescript.
 
 
 ## Executar o Projeto
